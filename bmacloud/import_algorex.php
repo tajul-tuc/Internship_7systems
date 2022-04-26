@@ -7,7 +7,7 @@ function algorex_einlesen($fid)
 {  
 global $aid, $userinfo;
 
-$anlage = $aid; //KWapp kompatibilität
+$anlage = $aid; //KWapp kompatibilitï¿½t
 
 if (!$handle2 = fopen(get_fid_path($fid), "r+")) {
 	 print "Kann die Datei $fname nicht oeffnen";
@@ -131,7 +131,7 @@ function neuer_teilnehmer($gruppe,$melder,$ring,$adresse,$typ,$text)
 {
 global $aid, $userinfo;
 
-$anlage = $aid; //KWapp kompatibilität
+$anlage = $aid; //KWapp kompatibilitï¿½t
 
 //Lege die Gruppen an
 if($gruppe>0)
@@ -162,7 +162,7 @@ $sql="INSERT INTO `technik_melder` SET `gruppe`='$gruppe', `melder`='$melder', `
 
 $q2=mysql_query($sql);
 
-//Prüfplan berechnen für den Melder, nur wenn es noch keine manuellen Zeilen dafür gibt
+//Prï¿½fplan berechnen fï¿½r den Melder, nur wenn es noch keine manuellen Zeilen dafï¿½r gibt
 $q2=mysql_query("SELECT * FROM `technik_melder_manuell` WHERE `anlage`='$anlage' AND `gruppe` = '".$gruppe."' AND `melder` = '".$melder."' AND `mandant` = '$userinfo[mandant]'");
 
 if(mysql_num_rows($q2)==0)
@@ -178,7 +178,7 @@ if($mod==2){$i2='1';}
 if($mod==3){$i3='1';}
 if($mod==0){$i4='1';}
 
-//Wenn der Meldertyp einen vorgegebenen Prüfplan hat, dann diesen verwenden:
+//Wenn der Meldertyp einen vorgegebenen Prï¿½fplan hat, dann diesen verwenden:
 if(($dat_typ[i1]==1)||($dat_typ[i2]==1)||($dat_typ[i3]==1)||($dat_typ[i4]==1))
 {
 	$i1=$dat_typ[i1];
